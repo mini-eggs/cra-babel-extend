@@ -56,18 +56,15 @@ exec(setup, (err, stdout, stderr) => {
     if (err) {
       console.log("\nTest did not pass. Error within dependency install.\n");
 
-      console.log(stdout);
-      console.log(stderr);
-
       process.exit(1);
     }
 
-    // exec(cleanup, err => {
-    //   if (err) {
-    //     console.log("\nTest did not pass. Error cleaning files.\n");
-    //   }
+    exec(cleanup, err => {
+      if (err) {
+        console.log("\nTest did not pass. Error cleaning files.\n");
+      }
 
-    console.log("\nComplete.\n");
-    // });
+      console.log("\nComplete.\n");
+    });
   });
 });
