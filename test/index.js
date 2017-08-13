@@ -25,7 +25,7 @@ const installDepsAndBuild = `
 `;
 
 const cleanup = `
-  rm -rf test_example
+  rm -rf test_example package.json
 `;
 
 exec(setup, (err, stdout, stderr) => {
