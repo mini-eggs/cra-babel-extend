@@ -25,7 +25,7 @@ const installDepsAndBuild = `
 `;
 
 const cleanup = `
-  rm -rf test_example package.json
+  rm -rf test_example package-lock.json
 `;
 
 exec(setup, (err, stdout, stderr) => {
