@@ -16,12 +16,18 @@
     "eject": "cra-babel-extend && react-scripts eject"
   },
   "craBabelExtend": {
-    "presets": ["stage-0", "react-optimize"],
-    "plugins": ["transform-decorators-legacy"]
+    "presets": [
+      "stage-0",
+      "react-optimize"
+    ],
+    "plugins": [
+      "transform-decorators-legacy"
+    ]
   },
   "devDependencies": {
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-react-optimize": "^1.0.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "cra-babel-extend": "^1.0.0"
   }
 }
