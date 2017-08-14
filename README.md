@@ -50,6 +50,7 @@ render(<ExampleComponent />, document.getElementById("root"));
 ## How to install and use.
 1. `$ npm install --save-dev cra-babel-extend`.
 2. Add `cra-babel-extend && ` in front of the four default npm scripts found in a create-react-app project: `start`, `build`, `test` and `eject`. Like so:
+
     ```json
     "scripts": {
       "start": "cra-babel-extend && react-scripts start",
@@ -59,6 +60,7 @@ render(<ExampleComponent />, document.getElementById("root"));
     },
     ```
 3. Add a field called `craBabelExtend` to your package.json with two fields (optional) within it: `plugins` and `presets`. These behave exactly like those found in .babelrc. Here's how this would look:
+
     ```json
     "craBabelExtend": {
       "presets": ["stage-0", "react-optimize"],
