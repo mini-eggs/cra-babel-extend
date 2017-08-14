@@ -1,7 +1,7 @@
 ## Create React App Babel Extend.
 Add Babel preset and plugins to a create-react-app project without ejecting.
 
-Excerpt from example, what this package allows you to do within your create-react-app project: 
+Excerpt from examples, what using decorators would look like:
 ```javascript
 import React from "react";
 import { render } from "react-dom";
@@ -20,6 +20,31 @@ const app = <Provider store={store} children={<ExampleComponent />} />;
 const node = document.getElementById("root");
 
 render(app, node);
+```
+
+Another excerpt from examples, using `babel-plugin-preval`:
+```javascript
+/* global preval */
+import React from "react";
+import { render } from "react-dom";
+
+const { version } = preval`
+  const path = require("path");
+  const fs = require("fs");
+  const packageLocation = path.join(process.cwd(), "package.json");
+  const { version } = JSON.parse(fs.readFileSync(packageLocation, "utf-8"));
+  module.exports = {
+    version
+  };
+`;
+
+class ExampleComponent extends React.Component {
+  render() {
+    return <h1 children={`Example project version: ${version}`} />;
+  }
+}
+
+render(<ExampleComponent />, document.getElementById("root"));
 ```
 
 ## How to install and use.
