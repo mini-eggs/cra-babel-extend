@@ -60,10 +60,10 @@ render(<ExampleComponent />, document.getElementById("root"));
     ```
 3. Add a field called `craBabelExtend` to your package.json with two fields (optional) within it: `plugins` and `presets`. These behave exactly like those found in .babelrc. Here's how this would look:
     ```json
-      "craBabelExtend": {
-        "presets": ["stage-0", "react-optimize"],
-        "plugins": ["transform-decorators-legacy"]
-      },
+    "craBabelExtend": {
+      "presets": ["stage-0", "react-optimize"],
+      "plugins": ["transform-decorators-legacy"]
+    },
     ```
 4. You should now be golden! npm install your babel plugins and presets while adding them to their respective field in the `craBabelExtend` field in your package.json. Check out the examples if something goes awry and open an issue if it persists.
     
