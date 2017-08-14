@@ -49,7 +49,7 @@ render(<ExampleComponent />, document.getElementById("root"));
 
 ## How to install and use.
 1. `$ npm install --save-dev cra-babel-extend`.
-2. Add `cra-babel-extend && ` in front of the four default npm scripts found in a craete-react-app project: `start`, `build`, `test` and `eject`. Like so:
+2. Add `cra-babel-extend && ` in front of the four default npm scripts found in a create-react-app project: `start`, `build`, `test` and `eject`. Like so:
     ```json
     "scripts": {
       "start": "cra-babel-extend && react-scripts start",
@@ -65,4 +65,5 @@ render(<ExampleComponent />, document.getElementById("root"));
         "plugins": ["transform-decorators-legacy"]
       },
     ```
+4. You should now be golden! npm install your babel plugins and presets while adding them to their respective field in the `craBabelExtend` field in your package.json. Check out the examples if something goes awry and open an issue if it persists.
     
