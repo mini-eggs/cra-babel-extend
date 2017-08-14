@@ -1,5 +1,5 @@
-## Create React App Babel Extend.
-Add Babel preset and plugins to a create-react-app project without ejecting.
+# Create React App Babel Extend.
+Add Babel presets and plugins to a create-react-app project without ejecting.
 
 Excerpt from examples, what using decorators would look like:
 ```javascript
@@ -48,10 +48,21 @@ render(<ExampleComponent />, document.getElementById("root"));
 ```
 
 ## How to install and use.
-(1) `$ npm install cra-babel-extend`.
-
-(2) Add `cra-babel-extend && ` in front of the four scripts found in a create-react-app project: `start`, `build`, `test`, and `eject`.
-
-(3) Add a field called `craBabelExtend` in your package.json with two fields within it `plugins` and `presets`, both of which will be arrays similar to babelrc.
-
-(4) Ready to go! Add your Babel presets and plugins and run create-react-app scripts as you normally would.
+1. `$ npm install --save-dev cra-babel-extend`.
+2. Add `cra-babel-extend && ` in front of the four default npm scripts found in a craete-react-app project: `start`, `build`, `test` and `eject`. Like so:
+    ```json
+    "scripts": {
+      "start": "cra-babel-extend && react-scripts start",
+      "build": "cra-babel-extend && react-scripts build",
+      "test": "cra-babel-extend && react-scripts test --env=jsdom",
+      "eject": "cra-babel-extend && react-scripts eject"
+    },
+    ```
+3. Add a field called `craBabelExtend` to your package.json with two fields (optional) within it: `plugins` and `presets`. These behave exactly like those found in .babelrc. Here's how this would look:
+    ```json
+      "craBabelExtend": {
+        "presets": ["stage-0", "react-optimize"],
+        "plugins": ["transform-decorators-legacy"]
+      },
+    ```
+    
